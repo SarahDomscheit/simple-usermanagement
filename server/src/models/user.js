@@ -15,9 +15,11 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-  role: [
-    { type: mongoose.Schema.Types.ObjectId, ref: 'roles', required: true },
-  ],
+  role: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'roles',
+    default: '685a9cb663929e3df943cf2e',
+  },
 });
 
 export default model('User', userSchema);
